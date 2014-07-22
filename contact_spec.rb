@@ -33,18 +33,31 @@ describe Contact do
 
   # use . for class methods
   describe ".create" do
+    it "will be empty on initial start" do
+       expect(Contact.get_contacts.size).to eq(0)
+    end
+
     it "will push the entry to the contacts array" do
-      expect(Contact.get_contacts).to receive(:create).with('me', 'you')   
+       Contact.create('joe', 'a@b.com')
+       expect(Contact.get_contacts.size).to be > 0
     end
   end
 
   # use . for class methods
   describe ".find" do
+    it "will find a contact based on their email" do
+    end
+
+    it "will not return an email that is not in the array" do
+    end 
 
   end
 
   # use . for class methods
   describe ".all" do
+    it "will list all contacts in string format" do
+      
+    end
 
   end
 

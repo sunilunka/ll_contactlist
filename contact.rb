@@ -2,12 +2,13 @@ require 'pry'
 
 class Contact
 
-  attr_reader :contacts
-  ## In-memory list of contacts
-  @@contacts = []
 
   attr_accessor :name
   attr_accessor :email
+  attr_accessor :contacts
+  ## In-memory list of contacts
+  
+  @@contacts = []
 
   def initialize(name, email)
     # TODO: assign local variables to instance variables
@@ -17,6 +18,9 @@ class Contact
 
   def to_s
     # TODO: return string representation of Contact
+    @@contacts.each do |contact|
+      puts 
+    end
   end
 
   ## Class Methods
@@ -38,11 +42,10 @@ class Contact
     def all
       # TODO: Return the list of contacts, as is
       # puts "#{@@contacts}"
-      @@contacts.each do |entry|
-         puts "Name: #{entry.name}"
-         puts "Name: #{entry.email}"
-         puts
-        end
+      @@contacts.each_index do |entry|
+        puts "##{entry}"
+        puts
+      end
     end
   end
 

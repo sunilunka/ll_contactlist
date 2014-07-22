@@ -1,27 +1,32 @@
 require 'pry'
+require 'pg'
 
 class Contact
 
 
-  attr_accessor :name
+  attr_accessor :first_name
+  attr_accessor :last_name
   attr_accessor :email
   attr_accessor :contacts
   ## In-memory list of contacts
   
-  @@contacts = []
+  # @@contacts = []
 
-  def initialize(name, email)
-    # TODO: assign local variables to instance variables
-    @name = name
+  def initialize(first_name, last_name, email)
+    @first_name = first_name
+    @last_name = last_name
     @email = email
   end
 
-  def to_s
-    # TODO: return string representation of Contact
-    @@contacts.each do |contact|
-      puts 
-    end
-  end
+
+
+
+  # def to_s
+  #   # TODO: return string representation of Contact
+  #   @@contacts.each do |contact|
+  #     puts 
+  #   end
+  # end
 
   ## Class Methods
   class << self
@@ -32,8 +37,8 @@ class Contact
     end
 
     def get_contacts
-      @@contacts
-    end
+      
+™    end
 
     def find(index)
       # TODO: Will find and return contact by index
